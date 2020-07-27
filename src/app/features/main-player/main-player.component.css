@@ -1,0 +1,16 @@
+div {
+    display: flex;
+    align-items: center;
+}
+
+.inputText {
+    width: 600px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    height: 300px !important
+    }
+    
+    ::ng-deep .mat-form-field-infix {
+    padding-top: 1px !important;
+}

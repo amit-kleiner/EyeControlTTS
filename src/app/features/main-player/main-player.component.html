@@ -1,0 +1,26 @@
+<div class="text">
+    <mat-form-field class="inputText" appearance="outline">
+        <textarea matInput [(ngModel)]='myText'></textarea>
+    </mat-form-field>
+</div>
+<mat-form-field appearance="fill">
+    <mat-label>speed</mat-label>
+    <mat-select [(value)]="selectedSpeed">
+      <mat-option value="0.25">1</mat-option>
+      <mat-option value="1">2</mat-option>
+      <mat-option value="2">3</mat-option>
+      <mat-option value="2.7">4</mat-option>
+      <mat-option value="4">5</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>language</mat-label>
+    <mat-select [(value)]="selectedLanguage">
+      <mat-option *ngFor="let voice of allVoices.voices" value={{voice.name}}>
+        {{voice.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<div class="audio">
+    <app-audio [myText]="myText" [selectedSpeed]="selectedSpeed" [selectedLanguage]="selectedLanguage"></app-audio>
+</div>
